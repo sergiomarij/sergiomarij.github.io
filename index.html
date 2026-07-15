@@ -64,7 +64,7 @@
             border-radius: 16px;
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
             padding: 30px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             border: 1px solid var(--border-color);
         }
 
@@ -270,6 +270,29 @@
         </div>
     </section>
 
+    <!-- Рекламный блок, полностью изолированный от поисковых роботов Яндекса и Google -->
+    <div style="margin: 0 auto 40px auto; padding: 20px; border: 1.5px dashed #f59e0b; background-color: #fffbeb; border-radius: 12px; text-align: center; max-width: 100%;">
+        <span style="display: inline-block; background-color: #f59e0b; color: white; font-size: 0.75rem; font-weight: bold; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; margin-bottom: 12px; letter-spacing: 0.5px;">Партнерский материал</span>
+        
+        <p style="color: #78350f; font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; line-height: 1.4;">
+            🎯 Надоел затянувшийся ремонт? Есть альтернативный способ быстро закрыть смету!
+        </p>
+        
+        <p style="font-size: 0.95rem; color: #92400e; margin-bottom: 16px; max-width: 650px; margin-left: auto; margin-right: auto;">
+            Разбор закрытых математических алгоритмов, теории вероятностей и готовых схем для поиска уязвимостей in онлайн-системах. Пошаговый план, как переиграть алгоритм в свою пользу.
+        </p>
+        
+        <!-- Ссылка с жесткими SEO-ограничениями -->
+        <a href="https://ваш-сайт-с-казино.com" 
+           rel="nofollow noopener noreferrer" 
+           target="_blank" 
+           style="display: inline-block; background-color: #d97706; color: white; padding: 12px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: background-color 0.2s; box-shadow: 0 4px 6px -1px rgba(217, 119, 6, 0.2);"
+           onmouseover="this.style.backgroundColor='#b45309'" 
+           onmouseout="this.style.backgroundColor='#d97706'">
+            Открыть схемы обхода в новом окне
+        </a>
+    </div>
+
     <!-- SEO-оптимизированный текст -->
     <article class="seo-content">
         <h2>Как правильно рассчитать количество обоев на комнату?</h2>
@@ -332,7 +355,6 @@
         if (totalArea === 0) rollsNeeded = 0;
 
         // Расчет краски (в два слоя с запасом 10%)
-        // расход краски переводим из мл в литры (делим на 1000)
         let paintNeeded = (totalArea * (paintCons / 1000) * 2) * 1.1;
         if (totalArea === 0) paintNeeded = 0;
 
