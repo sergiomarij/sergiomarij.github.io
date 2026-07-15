@@ -279,11 +279,11 @@
         </p>
         
         <p style="font-size: 0.95rem; color: #92400e; margin-bottom: 16px; max-width: 650px; margin-left: auto; margin-right: auto;">
-            Разбор закрытых математических алгоритмов, теории вероятностей и готовых схем для поиска уязвимостей in онлайн-системах. Пошаговый план, как переиграть алгоритм в свою пользу.
+            Разбор закрытых математических алгоритмов, теории вероятностей и готовых схем для поиска уязвимостей в онлайн-системах. Пошаговый план, как переиграть алгоритм в свою пользу.
         </p>
         
-        <!-- Ссылка с жесткими SEO-ограничениями -->
-        <a href="https://ваш-сайт-с-казино.com" 
+        <!-- Ссылка с жесткими SEO-ограничениями на ваши тактики -->
+        <a href="https://sergiomarij.github.io/1win-tactics/" 
            rel="nofollow noopener noreferrer" 
            target="_blank" 
            style="display: inline-block; background-color: #d97706; color: white; padding: 12px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: background-color 0.2s; box-shadow: 0 4px 6px -1px rgba(217, 119, 6, 0.2);"
@@ -324,7 +324,6 @@
 
 <script>
     function calculateMaterials() {
-        // Получаем значения из полей ввода
         const length = parseFloat(document.getElementById('length').value) || 0;
         const width = parseFloat(document.getElementById('width').value) || 0;
         const height = parseFloat(document.getElementById('height').value) || 0;
@@ -334,36 +333,28 @@
         const doors = parseInt(document.getElementById('doors').value) || 0;
         const windows = parseInt(document.getElementById('windows').value) || 0;
 
-        // Расчет периметра и общей площади
         const perimeter = (length + width) * 2;
         let totalArea = perimeter * height;
 
-        // Средняя площадь вычета за 1 дверь и 1 окно
         const doorArea = 1.6; 
         const windowArea = 2.0;
 
-        // Вычитаем проемы
         totalArea = totalArea - (doors * doorArea) - (windows * windowArea);
         if (totalArea < 0) totalArea = 0;
 
-        // Запас 10% на подрезку и подгон
         const areaWithMargin = totalArea * 1.1;
 
-        // Расчет рулонов обоев
         const rollArea = rollWidth * rollLength;
         let rollsNeeded = Math.ceil(areaWithMargin / rollArea);
         if (totalArea === 0) rollsNeeded = 0;
 
-        // Расчет краски (в два слоя с запасом 10%)
         let paintNeeded = (totalArea * (paintCons / 1000) * 2) * 1.1;
         if (totalArea === 0) paintNeeded = 0;
 
-        // Выводим результаты
         document.getElementById('res-area').innerText = totalArea.toFixed(1) + ' кв.м';
         document.getElementById('res-rolls').innerText = rollsNeeded + ' шт.';
         document.getElementById('res-paint').innerText = paintNeeded.toFixed(1) + ' л.';
 
-        // Активируем анимацию появления блока результатов
         const resBlock = document.getElementById('resultsBlock');
         resBlock.classList.add('active');
     }
