@@ -3,13 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Калькулятор обоев и краски</title>
+    <title>Калькулятор обоев и краски для стен онлайн: точный расчет материалов</title>
     
     <!-- Подтверждение прав Яндекс.Вебмастер -->
     <meta name="yandex-verification" content="5e400008cee50dfa" />
+    
+    <!-- Иконка сайта (Favicon) -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 
+    <!-- Подключение Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
         input[type="number"]::-webkit-inner-spin-button,
         input[type="number"]::-webkit-outer-spin-button {
             -webkit-appearance: none;
@@ -20,9 +29,11 @@
         }
     </style>
 </head>
-<body class="bg-gray-900 text-gray-100 min-h-screen flex items-center justify-center p-4">
-    <div class="w-full max-w-2xl bg-gray-800 rounded-2xl shadow-2xl border border-gray-700 p-6 md:p-8">
-        <h1 class="text-2xl md:text-3xl font-extrabold text-center bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent mb-8">
+<body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col justify-between p-4">
+
+    <!-- Основной контейнер калькулятора -->
+    <main class="w-full max-w-2xl bg-gray-800 rounded-2xl shadow-2xl border border-gray-700 p-6 md:p-8 mx-auto mt-4">
+        <h1 class="text-2xl md:text-3xl font-extrabold text-center bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent mb-6">
             Калькулятор обоев и краски
         </h1>
 
@@ -80,7 +91,7 @@
 
             <!-- Правая колонка: Ввод параметров материала и Результаты -->
             <div class="space-y-6 flex flex-col justify-between">
-                <!-- Параметры материала (Динамические) -->
+                <!-- Параметры материала -->
                 <div id="material-params" class="space-y-4">
                     <h2 id="material-title" class="text-lg font-bold text-gray-300 border-b border-gray-700 pb-2 mb-4">Параметры рулона</h2>
                     
@@ -121,16 +132,53 @@
             </div>
         </div>
 
-        <!-- Оранжевая плашка (для трафика) -->
-        <div class="mt-8 p-4 bg-gradient-to-r from-amber-500/10 to-orange-500/10 rounded-xl border border-orange-500/20 text-center">
+        <!-- Кнопка перехода на тактики (счетчик Метрики будет отслеживать клик) -->
+        <div class="mt-8 p-5 bg-gradient-to-r from-amber-500/10 to-orange-500/10 rounded-xl border border-orange-500/20 text-center">
             <h3 class="text-md font-bold text-orange-400 mb-1">🎁 Беспроигрышные тактики для ремонта!</h3>
             <p class="text-xs text-gray-400 mb-3">Схемы обхода сложных углов и стыковки рисунков без лишней траты материалов.</p>
             <a href="https://sergiomarij.github.io/1win-tactics/" target="_blank" class="inline-block bg-orange-600 hover:bg-orange-500 text-white font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-lg transition-all duration-300 shadow-md hover:shadow-orange-600/20">
                 Открыть схемы обхода 🚀
             </a>
         </div>
-    </div>
 
+        <!-- Интерактивный блок вопросов и ответов (FAQ) для SEO -->
+        <section class="mt-8 pt-6 border-t border-gray-700">
+            <h2 class="text-lg font-bold text-gray-300 mb-4">Часто задаваемые вопросы (FAQ)</h2>
+            <div class="space-y-3">
+                <details class="group bg-gray-950 border border-gray-800 rounded-xl p-4 cursor-pointer [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex justify-between items-center text-sm font-semibold text-gray-300 hover:text-white transition-colors">
+                        <span>Какая погрешность у калькулятора?</span>
+                        <span class="transition-transform group-open:rotate-180">
+                            <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" width="18"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+                        Наш алгоритм автоматически закладывает технологический запас в 10% на случай обрезков при поклейке обоев, стыковки сложных узоров или неравномерного расхода краски.
+                    </p>
+                </details>
+
+                <details class="group bg-gray-950 border border-gray-800 rounded-xl p-4 cursor-pointer [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex justify-between items-center text-sm font-semibold text-gray-300 hover:text-white transition-colors">
+                        <span>Учитываются ли дверные и оконные проемы?</span>
+                        <span class="transition-transform group-open:rotate-180">
+                            <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" width="18"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+                        Да! В левой панели вы можете указать точное количество окон и дверей. Калькулятор сам вычтет их площадь, чтобы вы не покупали лишние рулоны или банки краски.
+                    </p>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал (Коммерческий фактор доверия) -->
+    <footer class="text-center text-[10px] text-gray-500 mt-8 mb-4">
+        <p class="mb-1">© 2026 Онлайн-калькулятор расчета строительных материалов.</p>
+        <p>Служба поддержки и связи: <a href="mailto:support@sergiomarij.github.io" class="text-blue-400 hover:underline">support@sergiomarij.github.io</a></p>
+    </footer>
+
+    <!-- Логика калькулятора -->
     <script>
         let mode = 'wallpaper';
         let doors = 1;
@@ -184,7 +232,6 @@
             const perimeter = 2 * (length + width);
             let totalArea = perimeter * height;
 
-            // Вычитаем двери (1.6 кв.м каждая) и окна (2.1 кв.м каждое)
             const doorsArea = doors * 1.6;
             const windowsArea = windows * 2.1;
             
@@ -197,7 +244,6 @@
                 const rollW = parseFloat(document.getElementById('roll-width').value) || 1;
                 const rollL = parseFloat(document.getElementById('roll-length').value) || 1;
                 
-                // Простой расчет количества рулонов с запасом 10%
                 const rollArea = rollW * rollL;
                 let rolls = 0;
                 if (rollArea > 0 && netArea > 0) {
@@ -210,19 +256,17 @@
                 
                 let liters = 0;
                 if (cons > 0 && netArea > 0) {
-                    liters = Math.ceil((netArea / cons) * layers * 1.05); // 5% запас
+                    liters = Math.ceil((netArea / cons) * layers * 1.05);
                 }
                 document.getElementById('res-total').innerText = liters;
             }
         }
 
-        // Навешиваем авторасчет на изменения полей
         const inputs = document.querySelectorAll('input');
         inputs.forEach(input => {
             input.addEventListener('input', calculate);
         });
 
-        // Первый запуск расчета
         calculate();
     </script>
 
